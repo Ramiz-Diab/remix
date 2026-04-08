@@ -1,0 +1,107 @@
+/* Contact Us Page Styles */
+
+.contact-us-page {
+  text-align: left;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(168, 85, 247, 0.16) 0%, transparent 33%),
+    radial-gradient(circle at 92% 10%, rgba(255, 202, 40, 0.16) 0%, transparent 29%),
+    linear-gradient(180deg, #0f1424 0%, #181228 100%);
+  border-radius: 18px;
+  padding: 1.2rem;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-form,
+.contact-info {
+  background: linear-gradient(135deg, #1d1c2f 0%, #111827 100%);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #393657;
+}
+
+.contact-form h2,
+.contact-info h2 {
+  margin-top: 0;
+  color: #ffca28;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #cbc9d1;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #3e3c59;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  direction: ltr;
+  text-align: left;
+  background-color: #26253a;
+  color: #f5f5f7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+}
+
+.contact-info p {
+  color: #cbc9d1;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info strong {
+  color: #ffca28;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.contact-us-page .btn-primary {
+  background: linear-gradient(90deg, #ffca28 0%, #a855f7 100%);
+  color: #111;
+}
+
+.contact-us-page .btn-primary:hover {
+  background: linear-gradient(90deg, #ffb300 0%, #9333ea 100%);
+  box-shadow: 0 8px 18px rgba(168, 85, 247, 0.35);
+}
+
+html[dir='rtl'] .contact-us-page {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .form-group input,
+html[dir='rtl'] .form-group textarea {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}

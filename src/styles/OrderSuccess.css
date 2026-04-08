@@ -1,0 +1,96 @@
+/* Order Success Page Styles */
+
+.order-success-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(168, 85, 247, 0.16) 0%, transparent 33%),
+    radial-gradient(circle at 92% 10%, rgba(255, 202, 40, 0.16) 0%, transparent 29%),
+    linear-gradient(180deg, #0f1424 0%, #181228 100%);
+  border-radius: 18px;
+  padding: 1.2rem;
+}
+
+.success-container {
+  background: linear-gradient(135deg, #1d1c2f 0%, #111827 100%);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  border: 1px solid #393657;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffca28 0%, #a855f7 100%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  color: #111;
+  font-weight: bold;
+}
+
+.success-container h1 {
+  color: #ffca28;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.success-message {
+  font-size: 1.2rem;
+  color: #cbc9d1;
+  margin-bottom: 1.5rem;
+}
+
+.order-info {
+  background: #202036;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border: 1px solid #393657;
+}
+
+.order-info p {
+  margin: 0.8rem 0;
+  color: #cbc9d1;
+}
+
+.order-info p strong {
+  color: #ffca28;
+  font-weight: 600;
+}
+
+.order-success-page .btn-primary {
+  background: linear-gradient(90deg, #ffca28 0%, #a855f7 100%);
+  color: #111;
+}
+
+.order-success-page .btn-primary:hover {
+  background: linear-gradient(90deg, #ffb300 0%, #9333ea 100%);
+  box-shadow: 0 8px 18px rgba(168, 85, 247, 0.35);
+}
+
+html[dir='rtl'] .order-success-page {
+  direction: rtl;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .success-container {
+    padding: 2rem;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+  }
+}

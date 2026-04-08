@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  direction: ltr;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #090d1c 0%, #0f1424 100%);
 }
 
 .App-logo {
@@ -26,6 +30,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  padding: 1rem 1.2rem 1.4rem;
+  text-align: center;
+  color: #cbc9d1;
+  border-top: 1px solid #2f2b47;
+  background: rgba(15, 20, 36, 0.82);
+}
+
+html[dir='rtl'] .App,
+html[dir='rtl'] .app-footer {
+  direction: rtl;
 }
 
 @keyframes App-logo-spin {

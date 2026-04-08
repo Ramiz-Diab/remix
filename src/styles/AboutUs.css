@@ -1,0 +1,72 @@
+/* About Us Page Styles */
+
+.about-us-page {
+  text-align: left;
+  background:
+    radial-gradient(circle at 9% 12%, rgba(168, 85, 247, 0.16) 0%, transparent 33%),
+    radial-gradient(circle at 90% 10%, rgba(255, 202, 40, 0.16) 0%, transparent 29%),
+    linear-gradient(180deg, #0f1424 0%, #181228 100%);
+  border-radius: 18px;
+  padding: 1.2rem;
+}
+
+.about-content {
+  background: linear-gradient(135deg, #1d1c2f 0%, #111827 100%);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin-top: 1.2rem;
+  border: 1px solid #393657;
+}
+
+.about-content section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #33324c;
+}
+
+.about-content section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-content h2 {
+  color: #ffca28;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.about-content p {
+  color: #cbc9d1;
+  line-height: 1.8;
+}
+
+.about-content ul {
+  color: #cbc9d1;
+  list-style-position: left;
+  direction: ltr;
+  text-align: left;
+}
+
+.about-content ul li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+html[dir='rtl'] .about-us-page {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .about-content ul {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1rem;
+  }
+}

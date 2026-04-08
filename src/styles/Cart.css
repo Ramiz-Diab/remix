@@ -1,0 +1,121 @@
+/* Cart Page Styles */
+
+.cart-page {
+  text-align: left;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(168, 85, 247, 0.16) 0%, transparent 33%),
+    radial-gradient(circle at 92% 10%, rgba(255, 202, 40, 0.16) 0%, transparent 29%),
+    linear-gradient(180deg, #0f1424 0%, #181228 100%);
+  border-radius: 18px;
+  padding: 1.2rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1b1b29;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 2rem 0;
+  border: 1px solid #393657;
+}
+
+.cart-table thead {
+  background: linear-gradient(90deg, #ffca28 0%, #a855f7 100%);
+  color: #121212;
+  font-weight: 600;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #33324c;
+  color: #cbc9d1;
+}
+
+.cart-table tbody tr:hover {
+  background-color: #25253a;
+}
+
+.cart-summary {
+  background: linear-gradient(135deg, #1d1c2f 0%, #111827 100%);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 2rem 0;
+  border: 1px solid #393657;
+}
+
+.cart-summary h3 {
+  color: #ffca28;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.cart-summary p {
+  color: #cbc9d1;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cart-actions .btn {
+  flex: 1;
+  min-width: 150px;
+  margin: 0;
+}
+
+.cart-page .btn-primary {
+  background: linear-gradient(90deg, #ffca28 0%, #a855f7 100%);
+  color: #111;
+}
+
+.cart-page .btn-primary:hover {
+  background: linear-gradient(90deg, #ffb300 0%, #9333ea 100%);
+}
+
+.cart-page .btn-secondary {
+  border: 1px solid #5e5184;
+  background: transparent;
+  color: #f3f4f6;
+}
+
+.cart-page .btn-secondary:hover {
+  background: rgba(168, 85, 247, 0.16);
+}
+
+html[dir='rtl'] .cart-page {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .cart-table th,
+html[dir='rtl'] .cart-table td {
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-table {
+    font-size: 0.9rem;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+  }
+
+  .cart-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,120 @@
+/* Product Details Page Styles */
+
+.product-details-page {
+  text-align: left;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(168, 85, 247, 0.16) 0%, transparent 33%),
+    radial-gradient(circle at 92% 10%, rgba(255, 202, 40, 0.16) 0%, transparent 29%),
+    linear-gradient(180deg, #0f1424 0%, #181228 100%);
+  border-radius: 18px;
+  padding: 1.2rem;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #1d1c2f 0%, #111827 100%);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #393657;
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffca28 0%, #a855f7 100%);
+  border-radius: 8px;
+  min-height: 400px;
+}
+
+.placeholder-image {
+  color: #121212;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-info h1 {
+  margin-top: 0;
+  color: #ffca28;
+  font-weight: 600;
+}
+
+.product-info .artist {
+  color: #b9b7c8;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.product-info .description {
+  color: #cbc9d1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.product-details {
+  background: #202036;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #393657;
+}
+
+.product-details p {
+  margin: 0.5rem 0;
+  color: #cbc9d1;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+  flex: 1;
+  min-width: 150px;
+  margin: 0;
+}
+
+.product-details-page .btn-primary,
+.product-details-page .btn-success {
+  background: linear-gradient(90deg, #ffca28 0%, #a855f7 100%);
+  color: #111;
+}
+
+.product-details-page .btn-primary:hover,
+.product-details-page .btn-success:hover {
+  background: linear-gradient(90deg, #ffb300 0%, #9333ea 100%);
+  box-shadow: 0 8px 18px rgba(168, 85, 247, 0.35);
+}
+
+html[dir='rtl'] .product-details-page {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .product-details {
+  border-right: 4px solid #a855f7;
+  border-left: 1px solid #393657;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+}
