@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Checkout.css';
+import './Checkout.css';
 
 function Checkout() {
   return (
@@ -39,8 +39,8 @@ function Checkout() {
 
             <div className="order-summary">
               <h3>Order Summary</h3>
-              <p><strong>Remixes (2):</strong> 64.98 SAR</p>
-              <p><strong>Fees:</strong> 5.00 SAR</p>
+              <p><strong>Remixes (2):</strong> 64.98 $</p>
+              <p><strong>Fees:</strong> 5.00 $</p>
               <p className="total"><strong>Total:</strong> 69.98 SAR</p>
             </div>
 

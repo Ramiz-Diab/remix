@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import './styles/Navigation.css';
-import './styles/Global.css';
+import './components/Navigation/Navigation.css';
+import './styles/global.css';
 import { CartProvider } from './contexts/CartContext';
 
 // Components
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 
 // Pages
 import Home from './pages/Home';

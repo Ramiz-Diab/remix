@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
-import '../styles/Home.css';
+import './Home.css';
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -23,7 +23,10 @@ function Home() {
   const [remixes, setRemixes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState(null);
+  const [pressedButtons, setPressedButtons] = useState([]);
   const audioRefs = useRef({});
+  const visualizerBars = Array.from({ length: 64 });
+  const mixerButtons = Array.from({ length: 9 });
   const isRTL = document?.documentElement?.dir === 'rtl' || document?.documentElement?.lang === 'ar';
 
   const content = isRTL
@@ -158,8 +161,87 @@ function Home() {
     }
   };
 
+  const toggleMixerButton = (index) => {
+    setPressedButtons((prev) =>
+      prev.includes(index) ? prev.filter((btnIndex) => btnIndex !== index) : [...prev, index]
+    );
+  };
+
   return (
     <div className={`page home-page ${isRTL ? 'home-page-rtl' : ''}`}>
+      <section className={`featured-remixes ${playingId ? 'playing' : ''}`} aria-label="Turntable visual">
+        <div className="home-remix-console">
+          <div className="dj-toy-box">
+            <div className="dj-toy-turntable">
+              <div className="dj-platter-base">
+                <div className="dj-inner">
+                  <div className="dj-platter">
+                    <div className="dj-inner-ring dj-ring-1">
+                      <div className="dj-inner-ring dj-ring-2">
+                        <div className="dj-inner-ring dj-ring-3">
+                          <div className="dj-inner-ring dj-ring-4">
+                            <div className="dj-inner-ring dj-ring-5"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="dj-mixer">
+                <div className="dj-inner">
+                  <div className="dj-screen">
+                    <div className="dj-bar"></div>
+                    <div className="dj-bar"></div>
+                    <div className="dj-bar"></div>
+                    <div className="dj-bar"></div>
+                    <div className="dj-bar"></div>
+                  </div>
+                  <div className="dj-controls">
+                    <div className="dj-buttons">
+                      {mixerButtons.map((_, index) => (
+                        <div
+                          key={`mixer-button-${index}`}
+                          className={`dj-button ${pressedButtons.includes(index) ? 'pressed' : ''}`}
+                          onClick={() => toggleMixerButton(index)}
+                          role="button"
+                          aria-label={`Mixer button ${index + 1}`}
+                          tabIndex={0}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              toggleMixerButton(index);
+                            }
+                          }}
+                        ></div>
+                      ))}
+                    </div>
+                    <input type="range" className="dj-slider" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="dj-platter-base">
+                <div className="dj-inner">
+                  <div className="dj-platter">
+                    <div className="dj-inner-ring dj-ring-1">
+                      <div className="dj-inner-ring dj-ring-2">
+                        <div className="dj-inner-ring dj-ring-3">
+                          <div className="dj-inner-ring dj-ring-4">
+                            <div className="dj-inner-ring dj-ring-5"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="home-hero">
         <p className="home-badge">{content.badge}</p>
         <h1>{content.title}</h1>
@@ -189,12 +271,17 @@ function Home() {
         </div>
       </section>
 
-      <section className="featured-remixes">
+      <section className={`featured-remixes ${playingId ? 'playing' : ''}`}>
         <div className="home-section-heading">
           <h2>{content.latest}</h2>
           <Link to="/shop" className="home-view-all">
             {content.viewAll}
           </Link>
+        </div>
+        <div className={`audio-reactive-strip ${playingId ? 'active' : ''}`} aria-hidden="true">
+          {visualizerBars.map((_, index) => (
+            <span key={`home-bar-${index}`}></span>
+          ))}
         </div>
         {loading ? (
           <p className="home-loading">{content.loading}</p>

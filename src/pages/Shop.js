@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { CartContext } from '../contexts/CartContext';
-import '../styles/Shop.css';
+import './Shop.css';
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -24,6 +24,7 @@ function Shop() {
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState(null);
   const audioRefs = useRef({});
+  const visualizerBars = Array.from({ length: 64 });
   const { addToCart } = useContext(CartContext);
   const isRTL = document?.documentElement?.dir === 'rtl' || document?.documentElement?.lang === 'ar';
 
@@ -134,6 +135,11 @@ function Shop() {
         <p className="shop-loading">{content.empty}</p>
       ) : (
         <div className="table-container">
+          <div className={`audio-reactive-strip shop-strip ${playingId ? 'active' : ''}`} aria-hidden="true">
+            {visualizerBars.map((_, index) => (
+              <span key={`shop-bar-${index}`}></span>
+            ))}
+          </div>
           <table className="remixes-table">
             <thead>
               <tr>

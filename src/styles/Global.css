@@ -1,23 +1,57 @@
-/* Global Styles */
+/* Brutalism Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+
+:root {
+  --synth-bg: #000;
+  --synth-surface: #0d0d0d;
+  --synth-surface-2: #111;
+  --synth-border: #ffca28;
+  --synth-glow: #ffca28;
+  --synth-accent: #00f2ff;
+  --synth-text: #f3f3f3;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   direction: ltr;
   text-align: left;
-  background-color: #1a1a1a;
-  color: #f0f0f0;
+  background-color: var(--synth-bg);
+  color: var(--synth-text);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.main-content,
+.page,
+.home-page,
+.shop-page,
+.cart-page,
+.checkout-page,
+.about-us-page,
+.contact-us-page,
+.order-success-page,
+.product-details-page {
+  border-radius: 0 !important;
+}
+
+/* Remove decorative backgrounds for brutalism */
+body::before,
+body::after {
+  display: none;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .main-content {
@@ -26,6 +60,8 @@ body {
   margin: 0 auto;
   width: 100%;
   padding: 2rem;
+  border: 3px solid var(--synth-border);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Page Styles */
@@ -46,70 +82,71 @@ body {
 }
 
 .page h1 {
-  color: #ffc107;
+  color: var(--synth-glow);
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  font-family: 'Rajdhani', sans-serif;
+  text-shadow: none;
 }
 
 .page h2 {
-  color: #ffc107;
+  color: var(--synth-accent);
   font-size: 1.8rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+  text-shadow: none;
 }
 
 /* Buttons */
 .btn {
   padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 6px;
+  border: 3px solid var(--synth-border);
+  border-radius: 0;
   cursor: pointer;
   font-size: 1rem;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: none;
   font-weight: 500;
   text-align: center;
   margin: 0.5rem 0.5rem 0.5rem 0;
+  backdrop-filter: none;
+  background: transparent;
+  color: var(--synth-text);
 }
 
 .btn-primary {
-  background-color: #ffc107;
-  color: #1a1a1a;
-  font-weight: 600;
+  background-color: var(--synth-border);
+  color: #000;
+  font-weight: 700;
 }
 
 .btn-primary:hover {
   background-color: #ffb300;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
 }
 
 .btn-secondary {
-  background-color: #444;
-  color: #fff;
+  background-color: transparent;
+  color: var(--synth-text);
 }
 
 .btn-secondary:hover {
-  background-color: #555;
-  transform: translateY(-2px);
+  background-color: rgba(255, 202, 40, 0.1);
 }
 
 .btn-success {
-  background-color: #ffc107;
-  color: #1a1a1a;
+  background-color: var(--synth-border);
+  color: #000;
 }
 
 .btn-success:hover {
   background-color: #ffb300;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
 }
 
 .btn-add-cart {
-  background-color: #ffc107;
-  color: #1a1a1a;
+  background-color: var(--synth-border);
+  color: #000;
   width: 100%;
   margin-top: 0.5rem;
   font-weight: 600;
@@ -117,7 +154,6 @@ body {
 
 .btn-add-cart:hover {
   background-color: #ffb300;
-  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
 }
 
 .btn-large {
@@ -234,10 +270,10 @@ body {
 }
 
 .btn-play {
-  background-color: #ffc107;
-  color: #1a1a1a;
+  background: rgba(27, 27, 50, 0.55);
+  color: var(--synth-accent);
   padding: 0.6rem 1.2rem;
-  border: none;
+  border: 1px solid rgba(0, 242, 255, 0.45);
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
@@ -247,8 +283,10 @@ body {
 }
 
 .btn-play:hover {
-  background-color: #ffb300;
-  transform: scale(1.05);
+  background: var(--synth-accent);
+  color: #0a0a23;
+  transform: scale(1.04);
+  box-shadow: 0 0 24px rgba(0, 242, 255, 0.42);
 }
 
 .btn-play:active {
@@ -257,9 +295,93 @@ body {
 
 .price {
   font-size: 1.2rem;
-  color: #ffc107;
+  color: var(--synth-accent);
   font-weight: bold;
   margin: 0.5rem 0 !important;
+  text-shadow: 0 0 8px rgba(0, 242, 255, 0.3);
+}
+
+.audio-reactive-strip {
+  margin-top: 1rem;
+  height: 46px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--synth-border);
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.72) 0%, rgba(24, 22, 49, 0.7) 100%);
+  box-shadow: inset 0 0 12px rgba(0, 242, 255, 0.08);
+}
+
+.audio-reactive-strip span {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--synth-accent) 0%, var(--synth-glow) 100%);
+  height: 14px;
+  opacity: 0.75;
+  transform-origin: bottom center;
+  transform: scaleY(1);
+  will-change: transform;
+}
+
+.audio-reactive-strip span:nth-child(3n) { height: 18px; }
+.audio-reactive-strip span:nth-child(4n) { height: 10px; }
+.audio-reactive-strip span:nth-child(5n) { height: 22px; }
+
+.audio-reactive-strip.active span {
+  animation-name: equalizePulse;
+  animation-duration: var(--bar-speed, 0.72s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: var(--bar-delay, -0.1s);
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(0, 242, 255, 0.4);
+}
+
+.audio-reactive-strip.active span:nth-child(2n) {
+  --bar-speed: 0.58s;
+  --bar-delay: -0.17s;
+}
+
+.audio-reactive-strip.active span:nth-child(3n) {
+  --bar-speed: 0.84s;
+  --bar-delay: -0.29s;
+}
+
+.audio-reactive-strip.active span:nth-child(4n) {
+  --bar-speed: 0.67s;
+  --bar-delay: -0.21s;
+}
+
+.audio-reactive-strip.active span:nth-child(5n) {
+  --bar-speed: 0.95s;
+  --bar-delay: -0.33s;
+}
+
+.audio-reactive-strip.active span:nth-child(6n) {
+  --bar-speed: 0.73s;
+  --bar-delay: -0.26s;
+}
+
+.audio-reactive-strip.active span:nth-child(7n) {
+  --bar-speed: 0.89s;
+  --bar-delay: -0.38s;
+}
+
+@keyframes equalizePulse {
+  0% { transform: scaleY(0.35); }
+  30% { transform: scaleY(1.2); }
+  65% { transform: scaleY(2.2); }
+  100% { transform: scaleY(0.55); }
+}
+
+@keyframes synthFloat {
+  0% { transform: translateY(-2%) scale(1); }
+  100% { transform: translateY(2%) scale(1.06); }
 }
 
 /* Utility Classes */
@@ -307,4 +429,24 @@ body {
     direction: ltr;
   }
 }
+
+/* Brutal cards: keep strong borders, remove round corners/shadows where possible */
+.remix-card,
+.remix-grid,
+.audio-reactive-strip,
+.home-hero,
+.shop-hero,
+.cart-table,
+.cart-summary,
+.checkout-form,
+.order-summary,
+.about-content,
+.contact-form,
+.contact-info,
+.success-container,
+.product-container {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
 

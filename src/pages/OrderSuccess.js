@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/OrderSuccess.css';
+import './OrderSuccess.css';
 
 function OrderSuccess() {
   const orderNumber = Math.floor(Math.random() * 100000);

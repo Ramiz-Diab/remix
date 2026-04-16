@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
-import '../styles/Navigation.css';
+import { CartContext } from '../../contexts/CartContext.js';
+import './Navigation.css';
 
 function Navigation({ language, setLanguage }) {
   const { cartItems } = useContext(CartContext);

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ContactUs.css';
+import './ContactUs.css';
 
 function ContactUs() {
   return (
@@ -45,7 +45,7 @@ function ContactUs() {
           <h2>Contact Information</h2>
           <p>
             <strong>📧 Email:</strong><br />
-            info@arabic-remix.com
+            arab@remix.com
           </p>
           <p>
             <strong>📱 Phone:</strong><br />
