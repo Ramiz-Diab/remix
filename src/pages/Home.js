@@ -110,11 +110,13 @@ function Home() {
         setLoading(false);
       });
 
+      const currentAudioRefs = audioRefs.current;
       return () => {
         unsubscribe();
-        Object.values(audioRefs.current).forEach((audio) => {
+        Object.values(currentAudioRefs).forEach((audio) => {
           if (audio && !audio.paused) {
             audio.pause();
+            audio.currentTime = 0;
           }
         });
       };
